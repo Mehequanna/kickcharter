@@ -14,6 +14,10 @@ Display a Track of Projects to Goal
 Kickstarter (not an API, But a simple request): https://www.kickstarter.com/projects/search.json?search=&term=Tabletop%20Games
 https://www.kickstarter.com/projects/search.json
 
+## Data Viz Ideas
+* Show basic info: Project photo, blurb, category, creator, creator photo, project url
+* Charts and colors to show % funded and give special characters or colors for over funded projects.
+* Show on map kickstarter projects by location. Can do US and just a globe for everywhere else?
 
 
 ## Core Technologies
