@@ -1,1 +1,8 @@
-{{outlet}}
+<ul>
+  {{#each model.projects as |projects|}}
+  <h4><li>{{projects.name}}</li></h4>
+  <li>funding goal: ${{projects.goal}}</li>
+  <li>current funding: ${{projects.pledged}}</li>
+    {{log 'projects hbs log: ' projects}}
+  {{/each}}
+</ul>
