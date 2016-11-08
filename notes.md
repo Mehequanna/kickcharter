@@ -34,6 +34,7 @@ https://www.kickstarter.com/discover/advanced?category_id=1&woe_id=23424977&sort
 * Show basic info: Project photo, blurb, category, creator, creator photo, project url, rewards
 * Charts and colors to show % funded and give special characters or colors for over funded projects.
 * Show on map kickstarter projects by location. Can do US and just a globe for everywhere else? Use woeId?
+* Cumulative results for location
 
 
 ## Core Technologies
