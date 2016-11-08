@@ -22,7 +22,7 @@ a, a:visited, a:hover, a:link, a:active {
 footer {
   color: #FFF;
   text-shadow: 2px 2px 2px rgba(18, 41, 6, 0.9);
-  background-color: #081235;
+  background-color: #020621;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -41,20 +41,25 @@ footer hr:after {
 	position: relative;
 	top: -14px;
 	padding: 0 10px;
-	background: #081235;
+	background: #020621;
 	color: #FFF;
 	font-size: 18px;
 }
 
 footer ul li {
-    list-style: none;
-    display: inline;
+  list-style: none;
+  display: inline;
 }
 
 /* Class Styles */
 
 .mainContent {
   font-family: 'Quicksand', sans-serif;
+}
+
+.copyrightText {
+  text-align: center;
+  margin-top: .5em;
 }
 
 /* Font Styles */
