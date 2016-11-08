@@ -13,11 +13,27 @@ Display a Track of Projects to Goal
 
 Kickstarter (not an API, But a simple request): https://www.kickstarter.com/projects/search.json?search=&term=Tabletop%20Games
 https://www.kickstarter.com/projects/search.json
+We can iterate through pages by using:
+https://www.kickstarter.com/projects/search.json?search=board&term=Tabletop%20Games&page=3
+See the last parameter
+
+
+Parameters we can use for search ignore [] and fill with info:
+* page=[#]
+* term=[word1]%20[word2]
+* search=[word]
+* sort= [newest, end_date, popularity, most_funded, most_backed]
+* category_id=[#]
+* woe_id=[#]   this is a place
+*Maybe use this woeid api to have people search a place and get the woeid to pass to the kickstarter search and show results by location: https://developer.yahoo.com/geo/geoplanet/guide/api-reference.html*
+
+https://www.kickstarter.com/discover/advanced?category_id=1&woe_id=23424977&sort=newest&seed=2464274&page=1
+
 
 ## Data Viz Ideas
-* Show basic info: Project photo, blurb, category, creator, creator photo, project url
+* Show basic info: Project photo, blurb, category, creator, creator photo, project url, rewards
 * Charts and colors to show % funded and give special characters or colors for over funded projects.
-* Show on map kickstarter projects by location. Can do US and just a globe for everywhere else?
+* Show on map kickstarter projects by location. Can do US and just a globe for everywhere else? Use woeId?
 
 
 ## Core Technologies
