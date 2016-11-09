@@ -22,12 +22,6 @@ export default Ember.Route.extend({
       var h = 100;
       var barPadding = 1;
 
-<<<<<<< HEAD
-      var svg = d3.select(".chart")
-            .append("svg")
-            .attr("width", w)
-            .attr("height", h);
-=======
       var dataset = [ (parseInt(model[0].usd_pledged) / 2500), (model[0].goal / 2500)];
 
         //Create SVG element
@@ -35,7 +29,6 @@ export default Ember.Route.extend({
         .append("svg")
         .attr("width", w)
         .attr("height", h);
->>>>>>> afb50ce5f86c06883cdc779edfb10d31c5d9c36f
 
         svg.selectAll("rect")
         .data(dataset)
