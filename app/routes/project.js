@@ -47,6 +47,7 @@ export default Ember.Route.extend({
         .attr("fill", function(d) {
           return "rgb(0, 0, " + (d * 10) + ")";
         });
+
     },
   }
 }); //End Route
