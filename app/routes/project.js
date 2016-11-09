@@ -15,7 +15,7 @@ export default Ember.Route.extend({
   actions: {
 
     buildSVG(model) {
-      console.log( parseInt(model[0].usd_pledged) );
+      console.log( parseFloat(model[0].usd_pledged, 16) );
 
       var sampleSVG = d3.select("#chart")
               .append("svg")
@@ -25,7 +25,7 @@ export default Ember.Route.extend({
           sampleSVG.append("circle")
               .style("stroke", "gray")
               .style("fill", "white")
-              .attr("r", 40)
+              .attr("r", parseInt(model[0].usd_pledged) / 300)
               .attr("cx", 50)
               .attr("cy", 50)
               .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
