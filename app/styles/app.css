@@ -15,8 +15,9 @@ header h3 {
   text-align: center;
 }
 
-a, a:visited, a:hover, a:link, a:active {
-  text-decoration: none;
+a, a:link, a:hover, a:visited, a:active {
+  text-decoration: none !important;
+  color: #FFF;
 }
 
 footer {
@@ -51,15 +52,34 @@ footer ul li {
   display: inline-block;
 }
 
+footer ol li {
+  list-style: none;
+  text-align: left;
+}
+
 /* ID Styles */
 
+#charterRow {
+  padding: 1em;
+  text-align: center;
+}
 
+#socialRow {
+  padding: 1em;
+  text-align: center;
+}
 
 
 /* Class Styles */
 
+.mainHeader {
+  text-align: center;
+}
+
 .mainContent {
   font-family: 'Quicksand', sans-serif;
+  margin: 0 auto;
+  padding: 4em;
 }
 
 .copyrightText {
@@ -68,8 +88,7 @@ footer ul li {
 }
 
 .socialIcon {
-  margin-right: 2em;
-  margin-left: 2em
+  margin-right: 1.6em;
   max-height: 2em;
   max-width: 2em;
 }
