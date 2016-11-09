@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   //Add Params to Argument of model function if we want to search by a term
 
   model: function() {
-    var url = 'https://www.kickstarter.com/projects/search.json?term=Tabletop&sort=end_date&per_page=40';
+    var url = 'https://www.kickstarter.com/projects/search.json?term=Game&sort=popularity&per_page=40';
       return Ember.$.getJSON(url).then(function(responseJSON) {
         return responseJSON.projects;
     });
@@ -15,14 +15,29 @@ export default Ember.Route.extend({
   actions: {
 
     buildSVG(model) {
-      console.log( 'Pledged:' + model[0].usd_pledged + ', Goal:' + model[0].goal );
+      console.log( 'Pledged:' + model[1].usd_pledged + ', Goal:' + model[1].goal );
+      console.log( 'Project:' + model[1].name);
 
       //Width and height
       var w = 500;
       var h = 100;
       var barPadding = 1;
 
-      var dataset = [ (parseInt(model[0].usd_pledged) / 2500), (model[0].goal / 2500)];
+      var pledged = parseInt(model[1].pledged * model[1].static_usd_rate);
+      var goal = parseInt(model[1].goal * model[1].static_usd_rate);
+
+      var unFunded = (pledged / goal) * 100;
+      var funded = (goal / pledged) * 100;
+
+      var dataset = [ 50, 50];
+
+      //sets high number as 100(equal to div height), low number as % of high number
+      if (pledged >= goal) {
+         dataset = [ funded, 100];
+      } else if (goal > pledged) {
+        dataset = [unFunded, 100];
+      }
+
 
         //Create SVG element
         var svg = d3.select("#chart")
