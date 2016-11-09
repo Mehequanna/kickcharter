@@ -23,7 +23,7 @@ export default Ember.Route.extend({
       var h = 400;
       var barPadding = 1;
 
-      var svg = d3.select("#chart")
+      var svg = d3.select(".chart")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
