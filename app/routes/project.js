@@ -17,24 +17,46 @@ export default Ember.Route.extend({
     buildSVG(model) {
       console.log( parseFloat(model[0].usd_pledged) );
 
-      var sampleSVG = d3.select("#chart")
-              .append("svg")
-              .attr("width", 100)
-              .attr("height", 100);
+      var dataset = [ 200, 150 ];
 
-          sampleSVG.append("circle")
-              .style("stroke", "gray")
-              .style("fill", "white")
-              .attr("r", parseFloat(model[0].usd_pledged) / 300)
-              .attr("cx", 50)
-              .attr("cy", 50)
-              .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
-              .on("mouseout", function(){d3.select(this).style("fill", "white");});
+      var w = 100;
+      var h = 400;
+      var barPadding = 1;
 
+      var svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
+      svg.selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("x", function(d, i) {
+          return i * 5;  //Bar width of 20 plus 1 for padding
+        })
+        .attr("x", function(d, i) {
+          return i * (w / dataset.length);
+        })
+        .attr("width", w / dataset.length - barPadding)
+        .attr("height", function(d) {
+          return d * 4;
+        })
+        .attr("y", function(d) {
+          return h - d;  //Height minus data value
+        })
+        .attr("height", function(d) {
+          return d;  //Just the data value
+        })
+        .attr("fill", function(d) {
+          return "rgb(0, 0, " + (d * 10) + ")";
+        });
+
+        svg.selectAll("text")
+         .data(dataset)
+         .enter()
+         .append("text")
 
     },
-
-
   }
 }); //End Route
