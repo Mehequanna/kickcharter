@@ -33,9 +33,9 @@ export default Ember.Route.extend({
 
       //sets high number as 100(equal to div height), low number as % of high number
       if (pledged >= goal) {
-         dataset = [ funded, 100];
+         dataset = [funded, 100];
       } else if (goal > pledged) {
-        dataset = [unFunded, 100];
+        dataset = [100, unfunded];
       }
 
 

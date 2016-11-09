@@ -23,7 +23,7 @@ export default Ember.Route.extend({
   //  });
 
    return Ember.$.getJSON(url).then(function(responseJSON) {
-      return responseJSON.projects[0];
+      return responseJSON.projects[1];
     });
   },
 
@@ -32,11 +32,25 @@ export default Ember.Route.extend({
     buildSVG(model) {
       console.log( parseFloat(model.usd_pledged) );
 
-      var dataset = [ 200, 150 ];
-
+      //width and height
       var w = 200;
-      var h = 400;
+      var h = 100;
       var barPadding = 10;
+
+      var pledged = parseInt(model.pledged * model.static_usd_rate);
+      var goal = parseInt(model.goal * model.static_usd_rate);
+
+      var unFunded = (pledged / goal) * 100;
+      var funded = (goal / pledged) * 100;
+
+      var dataset = [ 50, 50];
+
+      //sets high number as 100(equal to div height), low number as % of high number
+      if (pledged >= goal) {
+         dataset = [funded, 100];
+      } else if (goal > pledged) {
+        dataset = [100, unfunded];
+      }
 
       var svg = d3.select("#chart")
             .append("svg")
