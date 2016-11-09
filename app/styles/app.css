@@ -48,8 +48,13 @@ footer hr:after {
 
 footer ul li {
   list-style: none;
-  display: inline;
+  display: inline-block;
 }
+
+/* ID Styles */
+
+
+
 
 /* Class Styles */
 
@@ -60,6 +65,13 @@ footer ul li {
 .copyrightText {
   text-align: center;
   margin-top: .5em;
+}
+
+.socialIcon {
+  margin-right: 2em;
+  margin-left: 2em
+  max-height: 2em;
+  max-width: 2em;
 }
 
 /* Font Styles */
