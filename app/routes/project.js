@@ -47,25 +47,6 @@ export default Ember.Route.extend({
         .attr("fill", function(d) {
           return "rgb(0, 0, " + (d * 10) + ")";
         });
-
-        svg.selectAll("text")
-        .data(dataset)
-        .enter()
-        .append("text")
-        .text(function(d) {
-          return d;
-        })
-        .attr("text-anchor", "middle")
-        .attr("x", function(d, i) {
-          return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-        })
-        .attr("y", function(d) {
-          return h - (d * 4) + 14;
-        })
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "11px")
-        .attr("fill", "white");
-
     },
   }
 }); //End Route
