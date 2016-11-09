@@ -48,8 +48,13 @@ footer hr:after {
 
 footer ul li {
   list-style: none;
-  display: inline-block;;
+  display: inline-block;
 }
+
+/* ID Styles */
+
+
+
 
 /* Class Styles */
 
@@ -63,6 +68,8 @@ footer ul li {
 }
 
 .socialIcon {
+  margin-right: 2em;
+  margin-left: 2em
   max-height: 2em;
   max-width: 2em;
 }
