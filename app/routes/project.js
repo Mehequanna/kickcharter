@@ -15,47 +15,63 @@ export default Ember.Route.extend({
   actions: {
 
     buildSVG(model) {
-      console.log( parseFloat(model[0].usd_pledged) );
+      console.log( 'Pledged:' + model[0].usd_pledged + ', Goal:' + model[0].goal );
 
-      var dataset = [ 200, 150 ];
-
-      var w = 100;
-      var h = 400;
+      //Width and height
+      var w = 500;
+      var h = 100;
       var barPadding = 1;
 
+<<<<<<< HEAD
       var svg = d3.select(".chart")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
+=======
+      var dataset = [ (parseInt(model[0].usd_pledged) / 2500), (model[0].goal / 2500)];
 
-      svg.selectAll("rect")
+        //Create SVG element
+        var svg = d3.select("#chart")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+>>>>>>> afb50ce5f86c06883cdc779edfb10d31c5d9c36f
+
+        svg.selectAll("rect")
         .data(dataset)
         .enter()
         .append("rect")
         .attr("x", function(d, i) {
-          return i * 5;  //Bar width of 20 plus 1 for padding
-        })
-        .attr("x", function(d, i) {
           return i * (w / dataset.length);
+        })
+        .attr("y", function(d) {
+          return h - (d * 4);
         })
         .attr("width", w / dataset.length - barPadding)
         .attr("height", function(d) {
           return d * 4;
-        })
-        .attr("y", function(d) {
-          return h - d;  //Height minus data value
-        })
-        .attr("height", function(d) {
-          return d;  //Just the data value
         })
         .attr("fill", function(d) {
           return "rgb(0, 0, " + (d * 10) + ")";
         });
 
         svg.selectAll("text")
-         .data(dataset)
-         .enter()
-         .append("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .text(function(d) {
+          return d;
+        })
+        .attr("text-anchor", "middle")
+        .attr("x", function(d, i) {
+          return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+        })
+        .attr("y", function(d) {
+          return h - (d * 4) + 14;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .attr("fill", "white");
 
     },
   }
