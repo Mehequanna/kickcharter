@@ -97,6 +97,14 @@ footer ol li {
   margin-top: 1.75em;
 }
 
+#chart {
+  margin-top: 5em;
+}
+/*
+rect {
+  padding-right: 25px;
+}*/
+
 /* Font Styles */
 
 /*font-family: 'Quicksand', sans-serif;

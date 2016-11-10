@@ -3,27 +3,9 @@ import d3 from 'd3';
 
 export default Ember.Route.extend({
   model: function() {
-    // var goal = ""; //NUMBER
-    // var usd_pledged = ""; //NUMBER
-    // var currency = "";
-    // var currency_symbol = "";
-    // var state = "";
-    // var photo = "";
-    // var name = "";
-    // var blurb = "";
-    // var deadline = ""; //NUMBER
-    // var created_at = ""; //NUMBER
-    // var launched_at = ""; //NUMBER
-    // var locationShortName = ""; //Property of
-
     var url = 'https://www.kickstarter.com/projects/search.json?term=Tabletop&sort=end_date&per_page=40';
-  //   return Ember.$.getJSON(url).then(function(responseJSON) {
-  //     var returnArray = {'projects': responseJSON.projects[0]};
-  //     return returnArray;
-  //  });
-
-   return Ember.$.getJSON(url).then(function(responseJSON) {
-      return responseJSON.projects[1];
+    return Ember.$.getJSON(url).then(function(responseJSON) {
+      return responseJSON.projects[5];
     });
   },
 
@@ -31,7 +13,7 @@ export default Ember.Route.extend({
 
     buildSVG(model) {
       console.log( parseFloat(model.usd_pledged) );
-
+      d3.select("#chart").clear();
       //width and height
       var w = 200;
       var h = 100;
