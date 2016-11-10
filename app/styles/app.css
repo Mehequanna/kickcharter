@@ -80,6 +80,7 @@ footer ol li {
   font-family: 'Quicksand', sans-serif;
   margin: 0 auto;
   padding: 4em;
+  min-height: calc(100vh - 370px);
 }
 
 .copyrightText {
