@@ -69,6 +69,15 @@ footer ol li {
   text-align: center;
 }
 
+#iconRow {
+  margin-top: 1.5em;
+}
+
+#chart {
+  border: 1px solid black;
+  height: 289px;
+  padding-top: 100px;
+}
 
 /* Class Styles */
 
@@ -94,13 +103,7 @@ footer ol li {
   max-width: 2em;
 }
 
-#social {
-  margin-top: 1.75em;
-}
 
-#chart {
-  margin-top: 5em;
-}
 /*
 rect {
   padding-right: 25px;

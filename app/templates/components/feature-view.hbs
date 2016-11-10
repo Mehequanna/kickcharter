@@ -1,12 +1,14 @@
 <div class="featured text-center">
   <h2>{{model.name}}</h2>
   <p>{{model.blurb}}</p>
-  <!-- <img src={{model.photo.med}} alt="" /> -->
-  <button class="btn btn-default" {{action "buildSVG" model}}>Click</button>
+</div>
 
-  <div id="chart">
-    <p>
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img img-responsive" src={{model.photo.full}} alt="" />
+  </div>
 
-    </p>
+  <div id="chart" class="col-sm-6 text-center">
+    <p></p>
   </div>
 </div>
