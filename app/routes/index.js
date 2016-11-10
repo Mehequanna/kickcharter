@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   model: function() {
     var url = 'https://www.kickstarter.com/projects/search.json?term=Tabletop&per_page=10';
     return Ember.$.getJSON(url).then(function(responseJSON) {
-      return responseJSON.projects[9];
+      return responseJSON.projects[8];
     });
   },
 
